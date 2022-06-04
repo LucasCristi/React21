@@ -1,0 +1,47 @@
+{
+  "clientes": [
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 1
+    },
+    {
+      "nome": "qwqw",
+      "email": "qwqw",
+      "fone": "qwqwqw",
+      "id": 2
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 3
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 4
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 5
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 6
+    },
+    {
+      "nome": "qwqw",
+      "email": "qwqwqw",
+      "fone": "qwqwqw",
+      "id": 7
+    }
+  ],
+  "produtos": []
+}

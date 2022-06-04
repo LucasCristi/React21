@@ -8,13 +8,13 @@ Conecta um repositório local a um remoto
 git remote add origin https://github.com/LucasCristi/React21.git
 
 Adiciona arquivos ao commit
-git add <arquivos>
+git add nome arquivos
 
 Efetua o commit no repositório local
 git commit -m "Primeiro commit"
 
 Transfere os arquivos comitados localmente para o remoto
-git push -u origin main
+git push -u origin main (somente primeira vez digitar -u origin main)
 
 Verifica qual repositório remoto está conectado
 git remote -v
