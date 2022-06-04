@@ -1,46 +1,22 @@
 {
   "clientes": [
     {
-      "nome": "",
-      "email": "",
-      "fone": "",
+      "nome": "qwqw",
+      "email": "wqwwq",
+      "fone": "qwwqqw",
       "id": 1
     },
     {
-      "nome": "qwqw",
-      "email": "qwqw",
-      "fone": "qwqwqw",
+      "nome": "",
+      "email": "",
+      "fone": "",
       "id": 2
     },
     {
-      "nome": "",
-      "email": "",
-      "fone": "",
-      "id": 3
-    },
-    {
-      "nome": "",
-      "email": "",
-      "fone": "",
-      "id": 4
-    },
-    {
-      "nome": "",
-      "email": "",
-      "fone": "",
-      "id": 5
-    },
-    {
-      "nome": "",
-      "email": "",
-      "fone": "",
-      "id": 6
-    },
-    {
       "nome": "qwqw",
-      "email": "qwqwqw",
-      "fone": "qwqwqw",
-      "id": 7
+      "email": "qwqwq",
+      "fone": "qwwqqw",
+      "id": 3
     }
   ],
   "produtos": []

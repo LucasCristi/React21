@@ -1,0 +1,71 @@
+*{
+    margin: 1px;
+    padding: 0;
+}
+
+
+
+.containerimg {
+    background-image: url(./2.-As-principais-formas-de-captação-de-clientes-na-internet.jpg);
+    background-repeat: no-repeat;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    
+}
+
+.containerimg>h1{
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    display: flex;
+}
+
+.thead{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+.dadoscliente{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+
+.topo{
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border-radius: 10px;
+    font-size: large;
+
+}
+
+.rodape{
+    background-color: cornflowerblue;
+    justify-content: center;
+    display: flex;
+}
+
+tbody{
+    background-color: deeppink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dadoscadastro{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
