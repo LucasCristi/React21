@@ -15,7 +15,6 @@
 <body onload="load()">
     <header>
         <div class="container p-5">
-            Cabeçalho
             <div class="containerimg">
                 <label class="topo">Clientes, Cadastros e Produtos</label>
             </div>
@@ -23,45 +22,43 @@
         </div>
     </header>
 
-    <button>Consultar Clientes</button>
-    <button>Consultar Produtos</button>
 
-    <hr />
     <thead class="thead">
 
-        
+
 
         <div class="dadoscliente">
-            
+
             <label for="nome">Nome</label>
             <input type="text" id="nome" placeholder="Informe seu nome completo" />
             <label for="nome">E-mail</label>
             <input type="email" id="email" placeholder="Informe seu e-mail" />
             <label for="nome">Telefone</label>
             <input type="tel" id="fone" placeholder="Informe seu telefone" />
-            <button onclick="enviarDados()">Incluir</button>
-            
-        </div>
-        <hr>
-        <div class="dadoscadastro">
+            <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
 
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                
-            </tr>
+
+            <div class="botoes">
+                <button class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
+                <button class="btn btn-outline-primary btn-sm">Consultar Produtos</button>
+            </div>
+
         </div>
         
-    </thead>
-
-    <table>
+        <div class="dadoscadastro">
+        <table class="table table-dark">
+        </thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+        </tr>
         <tbody id="dados" id="limpar"></tbody>
-    </table>
-
-
     </thead>
+</table>
+</div>
+
+
     <script>
 
 
@@ -107,7 +104,7 @@
     </script>
 
     <footer class="rodape">
-        Rodapé
+        LUCASCRISTI ©
     </footer>
 
 </body>

@@ -1,48 +1,76 @@
 *{
-    margin: 1px;
+    margin: 0px;
     padding: 0;
 }
 
-
+body{
+    display: flex;
+    display: grid;
+    width: 100%;
+    margin: 0;
+    /* background-image: url(./2.-As-principais-formas-de-captação-de-clientes-na-internet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
 
 .containerimg {
-    background-image: url(./2.-As-principais-formas-de-captação-de-clientes-na-internet.jpg);
+   background-color: rgba(0, 0, 0, 0.55);
     background-repeat: no-repeat;
     height: 100px;
     display: flex;
     align-items: center;
     border-radius: 20px;
     justify-content: center;
-    
+    width: 100%;
+}
+
+header{
+    width: 100%;
+
 }
 
 .containerimg>h1{
-    background-color: rgba(0, 0, 0, 0.55);
+    
     border-radius: 20px;
     display: flex;
 }
 
+
 .thead{
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
+    
+    display: grid;
+    justify-content: center; 
+    
 }
+
 .dadoscliente{
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.55);
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-row-start: 2;  
+    grid-column-start: 2;
+    grid-column-end: 1;
+    color: white;
+    width: auto;
+    margin: 2px;
+}
+
+button:hover{
+    background-color: aliceblue;
 }
 
 table{
-    background-color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.55);
     display: flex;
+    align-items: center;
     justify-content: center;
+    color: white;
 }
 
 
 .topo{
-    background-color: rgba(0, 0, 0, 0.55);
+    
     color: white;
     border-radius: 10px;
     font-size: large;
@@ -50,22 +78,134 @@ table{
 }
 
 .rodape{
-    background-color: cornflowerblue;
+    background-color: black;
+    color: white;
     justify-content: center;
     display: flex;
+    padding: 2px;
+    margin-top: 22rem;
+    padding: 10px;
 }
 
 tbody{
-    background-color: deeppink;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    
+    grid-row-start: 8; 
+    grid-column-start: 2;  
+      
 }
 
 .dadoscadastro{
-    background-color: blueviolet;
+    
     display: flex;
     justify-content: center;
-    margin: auto;
+    color: white;
+    word-spacing: 150px;
+    font-style: oblique;
 }
+
+table{
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+@media screen and (max-width: 720px) {
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+        width: 100%;
+        margin: 0;
+        background-image: linear-gradient(black,blue);              
+    }
+
+    .dadoscliente{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+    }
+       
+    tbody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    table{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+    }
+
+    .rodape{
+        width: 100%;
+        margin-top: 15rem;
+    }
+
+    tbody#dados{
+        color: rgba(0, 0, 0, 0);
+        
+    }
+
+    td{
+        color: white;
+        border-radius: 5px;  
+        line-height: 1.7;      
+    }
+
+    label:hover{
+        color: blue;
+    }
+
+    label.topo{
+        font-style: italic;
+        font-size: 20px;
+        font-weight: 100;
+        background-color: rgba(0, 0, 0, 0.55);
+
+    }
+
+    input, input#email, input#fone{
+        width: 97%;
+        border-radius: 5px;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.55);
+        color: white;
+    }
+
+    footer.rodape{
+        font-style: italic;
+        color: rgb(47, 85, 255);
+    }
+
+    .containerimg{
+        background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .dadoscadastro{
+        width: 80%;   
+    }
+
+}
+
+
 

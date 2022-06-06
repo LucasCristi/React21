@@ -1,22 +1,10 @@
 {
   "clientes": [
     {
-      "nome": "qwqw",
-      "email": "wqwwq",
-      "fone": "qwwqqw",
+      "nome": "Lucas Cristi",
+      "email": "lucas.cristi@gmail.com",
+      "fone": "47 990909090",
       "id": 1
-    },
-    {
-      "nome": "",
-      "email": "",
-      "fone": "",
-      "id": 2
-    },
-    {
-      "nome": "qwqw",
-      "email": "qwqwq",
-      "fone": "qwwqqw",
-      "id": 3
     }
   ],
   "produtos": []
