@@ -4,22 +4,23 @@
 }
 
 body{
-    display: flex;
+   
     display: grid;
-    width: 100%;
+    max-width: 100%;
     margin: 0;
-    /* background-image: url(./2.-As-principais-formas-de-captação-de-clientes-na-internet.jpg);
+    background-image: linear-gradient(black, blue, white);
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
 }
 
 .containerimg {
-   background-color: rgba(0, 0, 0, 0.55);
+    background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     height: 100px;
     display: flex;
     align-items: center;
-    border-radius: 20px;
     justify-content: center;
     width: 100%;
 }
@@ -43,56 +44,61 @@ header{
     
 }
 
-.dadoscliente{
-    background-color: rgba(0, 0, 0, 0.55);
+main{
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-row-start: 2;  
-    grid-column-start: 2;
-    grid-column-end: 1;
-    color: white;
-    width: auto;
-    margin: 2px;
+    flex-direction: column;
 }
 
-button:hover{
-    background-color: aliceblue;
+.dadoscliente{
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    width: 600px;
+}
+
+input, input#email, input#fone{
+    width: 97%;
+    border-radius: 5px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
 }
 
 table{
-    background-color: rgba(0, 0, 0, 0.55);
+    /* background-color: rgba(0, 0, 0, 0.55); */
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+        
 }
 
-
 .topo{
-    
+    background-color: rgba(0, 0, 0, 0.55);
     color: white;
     border-radius: 10px;
-    font-size: large;
-
+    font-size: 30px;
+    background-size: 50%;
 }
 
 .rodape{
-    background-color: black;
+    width: 100%;
+    
     color: white;
     justify-content: center;
     display: flex;
     padding: 2px;
-    margin-top: 22rem;
+    margin-top: 10rem;
     padding: 10px;
 }
 
-tbody{
-    
-    grid-row-start: 8; 
-    grid-column-start: 2;  
-      
-}
+
 
 .dadoscadastro{
     
@@ -103,12 +109,17 @@ tbody{
     font-style: oblique;
 }
 
-table{
-    padding: 2px;
+th{
+    border-radius: 8px;
+    
+}
+
+table, table#table-dark{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; 
+    
 }
 
 @media screen and (max-width: 720px) {
@@ -124,8 +135,15 @@ table{
         align-items: center;
         flex-direction: column;  
         width: 100%;
-        margin: 0;
-        background-image: linear-gradient(black,blue);              
+        
+        background-image: linear-gradient(black,blue, white);              
+    }
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
     .dadoscliente{
@@ -140,9 +158,7 @@ table{
     tbody{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
+        align-items: center;    
     }
 
     table{
@@ -155,7 +171,6 @@ table{
 
     .rodape{
         width: 100%;
-        margin-top: 15rem;
     }
 
     tbody#dados{
@@ -175,14 +190,16 @@ table{
 
     label.topo{
         font-style: italic;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 100;
         background-color: rgba(0, 0, 0, 0.55);
+        width: 50%;
 
     }
 
-    input, input#email, input#fone{
-        width: 97%;
+    input#nome, input#email, input#fone{
+        display: flex;
+        width: 50%;
         border-radius: 5px;
         margin: auto;
         background-color: rgba(0, 0, 0, 0.55);
@@ -199,12 +216,13 @@ table{
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        display: flex;
+        width: 100%;
     }
 
     .dadoscadastro{
         width: 80%;   
     }
-
 }
 
 

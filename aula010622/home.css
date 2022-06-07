@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(black,blue,white);
+    background-repeat: no-repeat;
+}
+
+.containerimg {
+    background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+label.topo{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 30%;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 720px) {
+
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    body{
+        background-image: linear-gradient(black,blue, white);              
+    }
+    
+    .containerimg{
+        width: 100%;
+    }
+}

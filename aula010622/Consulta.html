@@ -14,39 +14,30 @@
 
 <body onload="load()">
     <header>
-        <div class="container p-5">
+        <!-- <div class="container p-5"> -->
+
             <div class="containerimg">
-                <label class="topo">Clientes, Cadastros e Produtos</label>
+                <label class="topo">CADASTRO E CONSULTA DE CLIENTES</label>
             </div>
 
-        </div>
-    </header>
-
-
-    <thead class="thead">
-
-
-
-        <div class="dadoscliente">
-
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Informe seu nome completo" />
-            <label for="nome">E-mail</label>
-            <input type="email" id="email" placeholder="Informe seu e-mail" />
-            <label for="nome">Telefone</label>
-            <input type="tel" id="fone" placeholder="Informe seu telefone" />
-            <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
-
-
-            <div class="botoes">
-                <button class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
-                <button class="btn btn-outline-primary btn-sm">Consultar Produtos</button>
-            </div>
-
-        </div>
         
-        <div class="dadoscadastro">
-        <table class="table table-dark">
+    </header>
+    <main>
+        <thead class="thead">
+            <div class="dadoscliente">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Informe seu nome completo" />
+                <label for="nome">E-mail</label>
+                <input type="email" id="email" placeholder="Informe seu e-mail" />
+                <label for="nome">Telefone</label>
+                <input type="tel" id="fone" placeholder="Informe seu telefone" />
+                <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
+                <div class="botoes">
+                    <button onclick="" class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
+                </div>
+            </div>
+            <div class="dadoscadastro">
+                <table class="table table-dark">
         </thead>
         <tr>
             <th>Nome</th>
@@ -54,59 +45,50 @@
             <th>Telefone</th>
         </tr>
         <tbody id="dados" id="limpar"></tbody>
-    </thead>
-</table>
-</div>
+        </thead>
+        </table>
+        </div>
+    </main>
+    <footer class="rodape">
+        <hr>
+    </footer>
+</body>
+<script>
+    function load() {
+        fetch("http://localhost:3000/clientes")
+            .then(x => x.json())
+            .then(y => display(y))
+    }
 
-
-    <script>
-
-
-
-        function load() {
-            fetch("http://localhost:3000/clientes")
-                .then(x => x.json())
-                .then(y => display(y))
-        }
-
-        function display(dados) {
-            let linhas = ""
-            for (let i = 0; i < dados.length; i++) {
-                linhas +=
-                    `<tr><td>${dados[i].id}</td>
-                     <td>${dados[i].nome}</td>
-                     <td>${dados[i].email}</td>
-                     <td>${dados[i].fone}</td>
+    function display(dados) {
+        let linhas = ""
+        for (let i = 0; i < dados.length; i++) {
+            linhas +=
+                `<tr><td>${dados[i].id}</td>
+                        <td>${dados[i].nome}</td>
+                        <td>${dados[i].email}</td>
+                        <td>${dados[i].fone}</td>
                     </tr>`
 
-            }
-
-            document.getElementById("dados").innerHTML = linhas
         }
 
-        function enviarDados() {
+        document.getElementById("dados").innerHTML = linhas
+    }
 
-            const dados = {
-                nome: document.getElementById("nome").value,
-                email: document.getElementById("email").value,
-                fone: document.getElementById("fone").value
-            }
+    function enviarDados() {
 
-            fetch("http://localhost:3000/clientes", {
-                method: "POST",
-                body: JSON.stringify(dados),
-                headers: { "Content-type": "application/json; charset=UTF-8" }
-            })
-            window.location.reload()
+        const dados = {
+            nome: document.getElementById("nome").value,
+            email: document.getElementById("email").value,
+            fone: document.getElementById("fone").value
         }
 
-
-    </script>
-
-    <footer class="rodape">
-        LUCASCRISTI ©
-    </footer>
-
-</body>
-
+        fetch("http://localhost:3000/clientes", {
+            method: "POST",
+            body: JSON.stringify(dados),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+        window.location.reload()
+    }
+</script>
 </html>

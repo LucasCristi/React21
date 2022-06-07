@@ -1,11 +1,6 @@
 {
   "clientes": [
-    {
-      "nome": "Lucas Cristi",
-      "email": "lucas.cristi@gmail.com",
-      "fone": "47 990909090",
-      "id": 1
-    }
+    
   ],
   "produtos": []
 }
