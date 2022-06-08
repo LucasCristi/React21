@@ -1,6 +1,11 @@
 {
-  "clientes": [
-    
-  ],
-  "produtos": []
+  "clientes": [],
+  "produtos": [
+    {
+      "produto": "Bicicleta",
+      "quantidade": "10",
+      "preco": "1000",
+      "id": 1
+    }
+  ]
 }

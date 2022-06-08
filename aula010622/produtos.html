@@ -1,27 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="consulta.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>Document</title>
-    <link rel="stylesheet" href="./produtos.css">
 </head>
-<body>
+
+<body onload="">
     <header>
-        <div class="container p-5">
+        <!-- <div class="container p-5"> -->
 
-            <div class="containerimg">
-                <label class="topo">PRODUTOS</label>
-            </div>
+        <div class="containerimg">
+            <label class="topo">PRODUTOS</label>
+        </div>
+
+
     </header>
-
     <main>
 
+        <div class="dadoscliente">
+            <label for="nome">Produto</label>
+            <input type="text" id="produto" placeholder="Informe descrição do produto" />
+            <label for="quantidade">Quantidade</label>
+            <input type="text" id="quantidade" placeholder="Informe a quantidade" />
+            <label for="preco">Preço</label>
+            <input type="text" id="preco" placeholder="Informe o preço" />
+            <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
+            <div class="botoes">
+                <button onclick="load()" class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
+            </div>
+        </div>
+        <div class="dadoscadastro">
+            <table class="table table-dark">
+
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="dados" id="limpar">
+
+                </tbody>
+            </table>
+        </div>
     </main>
-
-    <footer>
-
+    <footer class="rodape">
+        <hr>
     </footer>
 </body>
+<script>
+    function load() {
+        fetch("http://localhost:3000/produtos")
+            .then(x => x.json())
+            .then(y => display(y))
+    }
+
+    function display(produtos) {
+        let linhas = ""
+        for (let i = 0; i < produtos.length; i++) {
+            linhas +=
+                `<tr><td>${produtos[i].id}</td>
+                        <td>${produtos[i].produto}</td>
+                        <td>${produtos[i].quantidade}</td>
+                        <td>${produtos[i].preco}</td>
+                    </tr>`
+
+        }
+
+        document.getElementById("dados").innerHTML = linhas
+    }
+
+    function enviarDados() {
+
+        const dados = {
+            produto: document.getElementById("produto").value,
+            quantidade: document.getElementById("quantidade").value,
+            preco: document.getElementById("preco").value
+        }
+
+        fetch("http://localhost:3000/produtos", {
+            method: "POST",
+            body: JSON.stringify(dados),
+            headers: { "Content-type": "application/json; charset=UTF-8" }
+        })
+
+    }
+
+
+</script>
+
 </html>

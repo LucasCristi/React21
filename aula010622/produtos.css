@@ -1,11 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-image: linear-gradient(black,blue,white);
+body {
+    background-image: linear-gradient(black, blue, white);
     background-repeat: no-repeat;
+    max-width: 100%;
+    display: flex;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.dadoscliente{
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    width: 600px;
+}
+
+input#preco, input#produto, input#quantidade{
+    width: 50%;
+    border-radius: 5px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
 }
 
 .containerimg {
@@ -20,30 +45,70 @@ body{
     width: 100%;
 }
 
-label.topo{
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+label.topo {
     color: white;
     background-color: rgba(0, 0, 0, 0.75);
-    width: 50%;
+    width: 100%;
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
-    border-radius: 5px;
+
 }
 
 @media screen and (max-width: 720px) {
 
-    
-    *{
+
+    * {
         margin: 0;
         padding: 0;
     }
-    
-    body{
-        background-image: linear-gradient(black,blue, white);              
+
+    body {
+        background-image: linear-gradient(black, blue, white);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .containerimg{
+
+    .dadoscliente {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
+
+    input#produto,
+    input#quantidade,
+    input#preco {
+        display: flex;
+        border-radius: 5px;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.55);
+        color: white;;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+    .rodape, footer{
+        width: 100%;
+    }
+
 }
