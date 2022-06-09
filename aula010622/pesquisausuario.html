@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pesquisausuario.css">
+</head>
+
+<body>
+    <header>
+        <div class="containerimg"></div>
+    </header>
+    <h1>Home</h1>
+    <label>Digite um codigo de cliente</label>
+    <input type="number" id="idcliente">
+    <input type="text" id="tipoconsulta">
+    <button onclick="pesquisarCliente(tipoconsulta.value)">Pesquisar</button>
+    <hr>
+    <label id="resultado"></label>
+
+    <script>
+        function pesquisarCliente(tipoConsulta) {
+            var idpesquisa = document.getElementById("idcliente").value
+            // var tipoConsulta = document.getElementById("tipoconsulta").value
+
+            fetch(`http://localhost:3000/${tipoConsulta}/${idpesquisa}`)
+                .then(data => data.json())
+                // TRATAR PARA MOSTRAR NA TELA 
+                .then(result => {
+                    var linhas = ''
+                    if (tipoConsulta == "clientes") {
+                        linhas = `<label for="id">ID</label> <input id="id" value=${result.id}>
+                        <label for="nome">NOME</label><input id="nome" value=${result.nome}>
+                        <label for="email">E-MAIL</label><input id="email" value=${result.email}>
+                        <label for="fone">FONE</label><input id="fone" value=${result.fone}>
+                        <button onclick="alterar()">Alterar</button>`
+                    } else {
+
+                        linhas = `<label for="id">ID</label><input id="id" value=${result.id}>
+                        <label for="produto">PRODUTO</label><input id="produto" value=${result.produto}>
+                        <label for="quantidade">QUANTIDADE</label><input id="quantidade" value=${result.quantidade}>
+                        <label for="preco">PREÇO</label> <input id="preco" value=${result.preco}>
+                        <button onclick="">Alterar</button>`
+                    }
+                    document.getElementById("resultado").innerHTML = linhas
+                })
+
+        }
+
+        function alterar(){
+            const cliente = {
+                nome:"",
+                email:"",
+                fone:""
+            }
+
+            cliente.nome = document.getElementById("nome").value,
+            cliente.email = document.getElementById("email").value,
+            cliente.fone = document.getElementById("fone").value
+
+            const options = {
+                method: 'PUT',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(cliente)
+            }
+
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/clientes/${idpesquisa}`, options)
+            .then(data => data.json())
+            .then(cli => alert('Cliente alterado com sucesso'))
+        }
+
+        function delete(){
+            
+            const options = {
+                method: 'DELETE'
+            }
+
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/clientes/${idpesquisa}`, options)
+        }
+
+
+    </script>
+</body>
+
+</html>

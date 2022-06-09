@@ -17,29 +17,23 @@
         <!-- <div class="container p-5"> -->
 
         <div class="containerimg">
-            <label class="topo">CONSULTA CADASTROS E PRODUTOS</label>
+            <label class="topo">CONSULTA CLIENTES E PRODUTOS</label>
         </div>
 
 
     </header>
     <main>
 
-        <div class="dadoscliente">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Informe seu nome completo" />
-            <label for="nome">E-mail</label>
-            <input type="email" id="email" placeholder="Informe seu e-mail" />
-            <label for="nome">Telefone</label>
-            <input type="tel" id="fone" placeholder="Informe seu telefone" />
-            <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
+        
+            <button onclick="mostrarClientes()" class="btn btn-outline-primary btn-sm">CONSULTA CLIENTES</button>
             <div class="botoes">
-                <button onclick="load()" class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
+                <button onclick="mostrarProdutos()" class="btn btn-outline-primary btn-sm">CONSULTA PRODUTOS</button>
             </div>
         </div>
         <div class="dadoscadastro">
             <table class="table table-dark">
 
-                <thead>
+                <!-- <thead>
                     <tr>
                         <th>Nome</th>
                         <th>E-mail</th>
@@ -48,7 +42,7 @@
                 </thead>
                 <tbody id="dados" id="limpar">
 
-                </tbody>
+                </tbody> -->
             </table>
         </div>
     </main>
@@ -57,14 +51,22 @@
     </footer>
 </body>
 <script>
-    function load() {
+    function mostrarClientes() {
         fetch("http://localhost:3000/clientes")
             .then(x => x.json())
             .then(y => display(y))
     }
 
     function display(dados) {
-        let linhas = ""
+        let linhas = ` <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>E-MAIL</th>
+                        <th>TELEFONE</th>
+                    </tr>
+                </thead>
+                <tbody id="dados" id="limpar">`
         for (let i = 0; i < dados.length; i++) {
             linhas +=
                 `<tr><td>${dados[i].id}</td>
@@ -74,25 +76,57 @@
                     </tr>`
 
         }
-
-        document.getElementById("dados").innerHTML = linhas
+        linhas += `</tbody`
+        document.getElementsByTagName("table")[0].innerHTML = linhas
     }
 
-    function enviarDados() {
+    // FUNCAO PARA MOSTRAR OS PRODUTOS
+    function mostrarProdutos() {
+        fetch("http://localhost:3000/produtos")
+            .then(x => x.json())
+            .then(y => displayProdutos(y))
+    }
 
-        const dados = {
-            nome: document.getElementById("nome").value,
-            email: document.getElementById("email").value,
-            fone: document.getElementById("fone").value
+    function displayProdutos(dados) {
+        let linhas = ` <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PRODUTO</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO</th>
+                    </tr>
+                </thead>
+                <tbody id="dados" id="limpar">`
+        for (let i = 0; i < dados.length; i++) {
+            linhas +=
+                `<tr><td>${dados[i].id}</td>
+                        <td>${dados[i].produto}</td>
+                        <td>${dados[i].quantidade}</td>
+                        <td>${dados[i].preco}</td>
+                    </tr>`
+
         }
-
-        fetch("http://localhost:3000/clientes", {
-            method: "POST",
-            body: JSON.stringify(dados),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        })
-        window.location.reload()
+        linhas += `</tbody`
+        document.getElementsByTagName("table")[0].innerHTML = linhas
     }
+
+
+    // FEITO ALTERACAO PARA FUNCAO SER REALIZADA EM OUTRA PAGINA
+    // function enviarDados() {
+        
+    //     const dados = {
+    //         nome: document.getElementById("nome").value,
+    //         email: document.getElementById("email").value,
+    //         fone: document.getElementById("fone").value
+    //     }
+
+    //     fetch("http://localhost:3000/clientes", {
+    //         method: "POST",
+    //         body: JSON.stringify(dados),
+    //         headers: { "Content-type": "application/json; charset=UTF-8" }
+    //     })
+    //     window.location.reload()
+    // }
 
 
 </script>

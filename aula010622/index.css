@@ -31,8 +31,9 @@ body{
 }
 
 .menucontainer{
-    justify-content: space-between;
+    /* justify-content: left; */
     display: flex;
+    flex-direction: column;    
 }
 
 .menucontainer a{

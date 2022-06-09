@@ -17,7 +17,7 @@
         <!-- <div class="container p-5"> -->
 
         <div class="containerimg">
-            <label class="topo">CADASTRO E CONSULTA DE CLIENTES</label>
+            <label class="topo">CADASTRO DE CLIENTES</label>
         </div>
 
 
@@ -57,26 +57,26 @@
     </footer>
 </body>
 <script>
-    function load() {
-        fetch("http://localhost:3000/clientes")
-            .then(x => x.json())
-            .then(y => display(y))
-    }
+    // function load() {
+    //     fetch("http://localhost:3000/clientes")
+    //         .then(x => x.json())
+    //         .then(y => display(y))
+    // }
 
-    function display(dados) {
-        let linhas = ""
-        for (let i = 0; i < dados.length; i++) {
-            linhas +=
-                `<tr><td>${dados[i].id}</td>
-                        <td>${dados[i].nome}</td>
-                        <td>${dados[i].email}</td>
-                        <td>${dados[i].fone}</td>
-                    </tr>`
+    // function display(dados) {
+    //     let linhas = ""
+    //     for (let i = 0; i < dados.length; i++) {
+    //         linhas +=
+    //             `<tr><td>${dados[i].id}</td>
+    //                     <td>${dados[i].nome}</td>
+    //                     <td>${dados[i].email}</td>
+    //                     <td>${dados[i].fone}</td>
+    //                 </tr>`
 
-        }
+    //     }
 
-        document.getElementById("dados").innerHTML = linhas
-    }
+    //     document.getElementById("dados").innerHTML = linhas
+    // }
 
     function enviarDados() {
 
@@ -91,7 +91,7 @@
             body: JSON.stringify(dados),
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
-        window.location.reload()
+        // window.location.reload()
     }
 
 
