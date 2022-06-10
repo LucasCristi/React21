@@ -1,24 +1,11 @@
 {
   "clientes": [
     {
-      "nome": "Lucas",
-      "email": "lucas@gmail.com",
-      "fone": "47 90909090",
-      "id": 1
-    },
-    {
-      "nome": "LUCAS",
-      "email": "CRISTI",
-      "fone": "4444",
-      "id": 2
+      "nome": "gustavo ",
+      "email": "@gmail",
+      "fone": "wahsuah ",
+      "id": 3
     }
   ],
-  "produtos": [
-    {
-      "produto": "PLAYST",
-      "quantidade": "12",
-      "preco": "14444",
-      "id": 1
-    }
-  ]
+  "produtos": []
 }

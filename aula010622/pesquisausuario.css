@@ -4,13 +4,13 @@
 }
 
 body{
-   
-    display: grid;
     max-width: 100%;
     margin: 0;
     background-image: linear-gradient(black, blue, white);
     background-repeat: no-repeat;
     background-size: cover;
+    
+   
 }
 
 .containerimg {
@@ -25,65 +25,6 @@ body{
     width: 100%;
 }
 
-header{
-    width: 100%;
-
-}
-
-tbody{
-    border-top: solid 0px;
-}
-
-.containerimg>h1{
-    
-    border-radius: 20px;
-    display: flex;
-}
-
-
-.thead{
-    
-    display: grid;
-    justify-content: center; 
-}
-
-
-
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.dadoscliente{
-    background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    width: 600px;
-}
-
-input, input#email, input#fone{
-    width: 97%;
-    border-radius: 5px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.55);
-    color: white;
-}
-
-table{
-    /* background-color: rgba(0, 0, 0, 0.55); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-        
-}
-
 .topo{
     background-color: rgba(0, 0, 0, 0.55);
     color: white;
@@ -94,39 +35,57 @@ table{
     display: flex;
 }
 
-.rodape{
+header{
     width: 100%;
-    
-    color: white;
-    justify-content: center;
-    display: flex;
-    padding: 2px;
-    margin-top: 10rem;
-    padding: 10px;
 }
 
-
-
-.dadoscadastro{
-    
-    display: flex;
-    justify-content: center;
-    color: white;
-    word-spacing: 150px;
-    font-style: oblique;
-}
-
-th{
+.input{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
     border-radius: 8px;
-    
 }
 
-table, table#table-dark{
+label{
+    color: white;
+    justify-content: center;
+    align-items: center;
     display: flex;
+}
+
+#idcliente, #tipoconsulta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
+}
+
+
+.button.btn, .botao{
+    justify-content: center;
+    display: flex;   
+}
+
+label#resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, input#preco{
+    display: flex;
+    width: 50%;
+    border-radius: 5px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
     align-items: center;
     justify-content: center;
-    flex-direction: column; 
-    
 }
 
 @media screen and (max-width: 720px) {
@@ -206,7 +165,7 @@ table, table#table-dark{
         border-radius: 0%;
     }
 
-    input#nome, input#email, input#fone{
+    input#nome, input#email, input#fone, input#id{
         display: flex;
         width: 50%;
         border-radius: 5px;
