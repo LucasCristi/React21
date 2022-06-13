@@ -25,6 +25,7 @@
     <main>
 
         <div class="dadoscliente">
+            
             <label for="nome">Produto</label>
             <input type="text" id="produto" placeholder="Informe descrição do produto" />
             <label for="quantidade">Quantidade</label>
@@ -32,25 +33,11 @@
             <label for="preco">Preço</label>
             <input type="text" id="preco" placeholder="Informe o preço" />
             <button onclick="enviarDados()" class="btn btn-outline-primary btn-sm">Incluir</button>
-            <div class="botoes">
+            <!-- <div class="botoes">
                 <button onclick="load()" class="btn btn-outline-primary btn-sm">Consultar Clientes</button>
-            </div>
+            </div> -->
         </div>
-        <div class="dadoscadastro">
-            <table class="table table-dark">
-
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço</th>
-                    </tr>
-                </thead>
-                <tbody id="dados" id="limpar">
-
-                </tbody>
-            </table>
-        </div>
+       
     </main>
     <footer class="rodape">
         <hr>

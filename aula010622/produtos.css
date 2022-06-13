@@ -14,6 +14,7 @@ body {
     
 }
 
+
 .dadoscliente{
     background-color: rgba(0, 0, 0, 0.55);
     border-radius: 8px;
@@ -22,7 +23,7 @@ body {
     justify-content: center;
     flex-direction: column;
     color: white;
-    width: 600px;
+    width: 100%;
 }
 
 input#preco, input#produto, input#quantidade{
@@ -49,7 +50,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    
 }
 
 label.topo {
@@ -84,6 +85,7 @@ label.topo {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+       
     }
 
 
@@ -91,7 +93,6 @@ label.topo {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
     }
 
     input#produto,
