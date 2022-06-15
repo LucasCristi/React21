@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./pesquisausuario.css">
 </head>
 
+
 <body>
     <header>
         <div class="containerimg">
@@ -25,11 +26,15 @@
     </div>
     <div class="botao">
         <button class="btn btn-outline-primary btn-sm" onclick="pesquisar(idcliente.value, tipoconsulta.value)">Pesquisar</button>
-        <button class="btn btn-outline-success btn-sm" onclick="load()">Todos</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="load()">Todos os Clientes</button>
+        <button class="btn btn-outline-primary btn-sm" onclick="loadProdutos()">Todos os Produtos</button>
     </div>
 
     <hr>
-    <label id="resultado"></label>
+    
+    <div id="resultado">
+
+    </div>
 
     <footer>
 
@@ -58,15 +63,15 @@
                         <label for="produto">PRODUTO</label><input id="produto" value='${result.produto}'>
                         <label for="quantidade">QUANTIDADE</label><input id="quantidade" value='${result.quantidade}'>
                         <label for="preco">PREÇO</label> <input id="preco" value='${result.preco}'>
-                        <button class="btn btn-outline-primary btn-sm" onclick="alterarProduto()">Alterar</button>
-                        <button class="btn btn-outline-danger btn-sm" onclick="excluirProduto()">Excluir</button>`
+                        <button class="btn btn-outline-primary btn-sm" onclick="alterarProduto(${id})">Alterar</button>
+                        <button class="btn btn-outline-danger btn-sm" onclick="excluirProduto(${id})">Excluir</button>`
                     }
                     document.getElementById("resultado").innerHTML = linhas
                 })
 
         }
 
-        //backend - banco de dados
+        //backend - funcao para alterar e excluir banco de dados json
 
         function alterarCliente(id) {
             const cliente = {
@@ -170,6 +175,38 @@
             document.getElementById("resultado").innerHTML = linhas
         }
 
+
+        function loadProdutos() {
+            fetch("http://localhost:3000/produtos")
+                .then(x => x.json())
+                .then(y => displayProduto(y))
+        }
+
+        function displayProduto(dados) {
+            let linhas = ` <table class="table"><thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PRODUTO</th>
+                        <th>QUANTIDADE</th>
+                        <th>PREÇO</th>
+                    </tr>
+                </thead>
+                <tbody id="dados">`
+            for (let i = 0; i < dados.length; i++) {
+                linhas +=
+                    `<tr><td>${dados[i].id}</td>
+                        <td>${dados[i].produto}</td>
+                        <td>${dados[i].quantidade}</td>
+                        <td>${dados[i].preco}</td>
+                        <td><button class="btn btn-outline-primary btn-sm" onclick="pesquisar(${dados[i].id}, 'produtos')">Alterar</button></td>
+                        <td><button class="btn btn-outline-danger btn-sm" onclick="excluirProduto(${dados[i].id})">Excluir</button></td>
+
+                    </tr>`
+
+            }
+            linhas += `</tbody></table>`
+            document.getElementById("resultado").innerHTML = linhas
+        }
 
 
 

@@ -3,14 +3,13 @@
     padding: 0;
 }
 
+
 body{
     max-width: 100%;
     margin: 0;
-    background-image: linear-gradient(black, blue, white);
+    background-image: linear-gradient(black,blue);
     background-repeat: no-repeat;
     background-size: cover;
-    
-   
 }
 
 .containerimg {
@@ -71,12 +70,16 @@ label{
     display: flex;   
 }
 
+th, td{
+    color: white;
+}
+
 label#resultado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 5px;
+    width: 100%;
+    background-image: linear-gradient(black,blue);
+
 }
 
 input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, input#preco{
@@ -90,6 +93,7 @@ input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, 
     justify-content: center;
 }
 
+
 @media screen and (max-width: 720px) {
     
     *{
@@ -102,9 +106,9 @@ input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, 
         justify-content: center;
         align-items: center;
         flex-direction: column;  
-        width: 100%;
+        max-width: 100%;
         
-        background-image: linear-gradient(black,blue, white);              
+        background-image: linear-gradient(black,blue);              
     }
 
     main{
@@ -130,12 +134,13 @@ input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, 
         border: none;  
     }
 
-    table{
+    table, table.table{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: none;
+        max-width: 90%;
+        
     }
 
     .rodape{
@@ -167,19 +172,30 @@ input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, 
         border-radius: 0%;
     }
 
-    input#nome, input#email, input#fone, input#id{
+    input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, input#preco{
         display: flex;
         width: 50%;
         border-radius: 5px;
         margin: auto;
         background-color: rgba(0, 0, 0, 0.55);
         color: white;
+        align-items: center;
+        justify-content: center;
     }
 
-    footer.rodape{
-        font-style: italic;
-        color: rgb(47, 85, 255);
+    div#resultado, div#td{
+        background-color: rgba(0, 0, 0, 0.55);
+        border-radius: 5px;
+        width: 100%;
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
     }
+
+    th{
+        color: white;
+    }
+
 
     .containerimg{
         background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
@@ -188,6 +204,11 @@ input#nome, input#email, input#fone, input#id, input#produto, input#quantidade, 
         background-position: center;
         display: flex;
         width: 100%;
+    }
+
+    .button.btn, .botao{
+        justify-content: center;
+        display: flex;   
     }
 
     .dadoscadastro{

@@ -1,11 +1,24 @@
 {
   "clientes": [
     {
-      "nome": "gustavo ",
-      "email": "@gmail",
-      "fone": "wahsuah ",
+      "nome": "teste",
+      "email": "teste@gmail.com",
+      "fone": "90909898",
+      "id": 2
+    },
+    {
+      "nome": "teste 3",
+      "email": "gmail.teste @",
+      "fone": "48 94 95 94",
       "id": 3
     }
   ],
-  "produtos": []
+  "produtos": [
+    {
+      "produto": "ALTERADO",
+      "quantidade": "10",
+      "preco": "100",
+      "id": 1
+    }
+  ]
 }
