@@ -1,12 +1,13 @@
 Inicializa um repositório local
 git init
 
-Cria uma branch local
-git branch -M main
 
 Conecta um repositório local a um remoto 
 git remote add origin https://github.com/LucasCristi/React21.git
 https://github.com/LucasCristi/Alura
+
+Cria uma branch local
+git branch -M main
 
 Adiciona arquivos ao commit
 git add nome arquivos
