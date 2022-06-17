@@ -35,7 +35,7 @@ input#preco, input#produto, input#quantidade{
 }
 
 .containerimg {
-    background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
+    background-image: url(../abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -44,6 +44,11 @@ input#preco, input#produto, input#quantidade{
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+
+label#topo{
+    background-image: url(../abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
+
 }
 
 main {
@@ -112,4 +117,5 @@ label.topo {
         width: 100%;
     }
 
+  
 }

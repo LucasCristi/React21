@@ -9,7 +9,7 @@ body{
 }
 
 .containerimg {
-    background-image: url(./abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
+    background-image: url(../abstratos-arte-digital-roxos-imagem-de-fundo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -23,11 +23,12 @@ body{
 label.topo{
     color: white;
     background-color: rgba(0, 0, 0, 0.75);
-    width: 100%;
+    width: 30%;
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     justify-content: center;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 720px) {
